@@ -184,7 +184,8 @@ for epoch in range(opt.n_epochs):
         optimizer_G.zero_grad()
 
         # Sample noise and labels as generator input
-        z = Variable(FloatTensor(np.random.normal(0, 1, (batch_size, opt.latent_dim))))
+        randomInt = np.random.randint(0, 5)
+        z = Variable(FloatTensor(np.random.normal(0, randomInt, (batch_size, opt.latent_dim))))
         gen_labels = Variable(LongTensor(np.random.randint(0, opt.n_classes, batch_size)))
 
         # Generate a batch of images
